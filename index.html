@@ -4,39 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Copper Creek Builders</title>
-    <link rel="icon" href="./assets/copper-creek-initials-logo.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="index.js"></script>
+    <link rel="icon" href="./assets/copper-creek-initials-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     <section id="landing">
-
       <!-- NAVIGATION BAR -->
       <nav class="nav">
-        <button id="menu-toggle" class="nav__toggle" aria-label="Toggle Navigation">
+        <img
+          src="./assets/copper-creek-initials-logo.png"
+          alt="Copper Creek Builders"
+          class="nav__logo"
+        />
+
+        <button
+          id="menu-toggle"
+          class="nav__toggle"
+          aria-label="Toggle Navigation"
+        >
           <span class="nav__toggle-bar"></span>
           <span class="nav__toggle-bar"></span>
           <span class="nav__toggle-bar"></span>
         </button>
 
         <ul id="nav-links" class="nav__links">
-          <li class="nav__item"><a href="#home" class="nav__link nav__link--active">Home</a></li>
-          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          <li class="nav__item">
+            <a href="#home" class="nav__link nav__link--active">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="services.html" class="nav__link">Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="gallery.html" class="nav__link">Gallery</a>
+          </li>
+          <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
         </ul>
       </nav>
 
       <!-- MODAL -->
 
-      
+      <!-- HERO -->
 
-      <section id="hero"></section>
-
+      <section class="hero">
+        <div class="hero-overlay">
+          <div class="container hero-content">
+            <h1>Craftsmanship Built to Last Generations</h1>
+            <p>
+              Custom home construction, luxury renovations, and bespoke
+              architectural builds.
+            </p>
+            <div class="hero-actions">
+              <a href="#gallery" class="btn-primary">View Our Work</a>
+              <a href="#contact" class="btn-secondary">Schedule Consultation</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
+    <!-- FOOTER -->
 
-
-
+    <footer id="contact" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Copper Creek Builders, LLC</h4>
+          <p>Licensed, Bonded & Insured General Contractors.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>info@coppercreek-builders.example</p>
+          <p>(555) 234-5678</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear"></span> Copper Creek Builders, LLC. All
+          rights reserved.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
