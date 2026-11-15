@@ -8,6 +8,7 @@ if (contactModal) {
   openModalButtons.forEach(button => {
     button.addEventListener("click", event => {
       event.preventDefault();
+      if (navLinks) navLinks.classList.remove("open");
       contactModal.showModal();
     });
   });
