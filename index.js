@@ -32,6 +32,48 @@ if (contactModal) {
   });
 }
 
+// Active Scroll-Linked Slide Animation
+const animatedSections = document.querySelectorAll(".reveal-left, .reveal-right");
+
+if (animatedSections.length > 0) {
+  let isTicking = false;
+
+  const updateScrollSlide = () => {
+    const viewportHeight = window.innerHeight;
+
+    animatedSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const startPoint = viewportHeight * 0.95; // Starts sliding near bottom of screen
+      const endPoint = viewportHeight * 0.45;   // Finishes sliding near center of screen
+
+      const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
+      const progress = Math.min(Math.max(rawProgress, 0), 1);
+
+      const direction = section.classList.contains("reveal-left") ? -1 : 1;
+      const offsetX = direction * 80 * (1 - progress);
+
+      section.style.opacity = progress;
+      section.style.transform = `translateX(${offsetX}px)`;
+    });
+
+    isTicking = false;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(updateScrollSlide);
+        isTicking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  updateScrollSlide();
+}
+
+
 // Mobile Menu & Footer Year
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
