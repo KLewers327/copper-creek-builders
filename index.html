@@ -31,7 +31,7 @@
 
           <ul id="nav-links" class="nav__links">
             <li class="nav__item">
-              <a href="#home" class="nav__link nav__link--active">Home</a>
+              <a href="#landing" class="nav__link nav__link--active">Home</a>
             </li>
             <li class="nav__item">
               <a href="services.html" class="nav__link">Services</a>
@@ -39,12 +39,53 @@
             <li class="nav__item">
               <a href="gallery.html" class="nav__link">Gallery</a>
             </li>
-            <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link open-contact-modal">Contact</a></li>
           </ul>
         </div>
       </nav>
 
       <!-- MODAL -->
+
+        <dialog class="contact-modal" id="contactModal">
+    <div class="modal-header">
+      <div>
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Request a Consultation</h2>
+      </div>
+      <button type="button" class="modal-close" id="closeModal" aria-label="Close Modal">&times;</button>
+    </div>
+
+    <div class="modal-contact-bar">
+      <span><strong>Phone:</strong> (555) 234-5678</span>
+      <span><strong>Email:</strong> info@coppercreek-builders.example</span>
+    </div>
+
+    <form class="modal-form" id="contactForm">
+      <div class="form-group">
+        <label for="clientName">Full Name</label>
+        <input type="text" id="clientName" required placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <label for="clientEmail">Email Address</label>
+        <input type="email" id="clientEmail" required placeholder="jane@example.com">
+      </div>
+      <div class="form-group">
+        <label for="projectType">Project Type</label>
+        <select id="projectType">
+          <option value="custom">Custom Home Build</option>
+          <option value="remodel">Whole-Home Remodel</option>
+          <option value="outdoor">Outdoor Living / Addition</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="projectDetails">Project Details</label>
+        <textarea id="projectDetails" rows="3" required placeholder="Share lot status, estimated square footage, or goals..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%;">Send Inquiry</button>
+      <p class="form-feedback" id="formFeedback"></p>
+    </form>
+  </dialog>
+
 
       <!-- HERO -->
 

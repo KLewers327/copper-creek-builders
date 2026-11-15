@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --copper: #b86b35;
+  --copper-dark: #945224;
+  --charcoal: #1e2226;
+  --slate: #4a525a;
+  --cream: #f7f5f2;
+  --white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Noto-Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   letter-spacing: 0.04em;
 }
 
@@ -33,6 +42,15 @@ img {
 a {
   text-decoration: none;
   display: inline;
+}
+
+.eyebrow {
+  display: block;
+  font: 700 0.8rem/1 sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--copper);
+  margin-bottom: 0.5rem;
 }
 
 /* NAVIGATION BAR */
@@ -110,6 +128,64 @@ nav {
   color: #000000;
   transform: translateY(-2px);
 }
+
+/* MODAL */
+
+.btn-nav {
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-modal {
+  margin: auto;
+  width: min(540px, 92%);
+  border: 0;
+  border-top: 5px solid var(--copper);
+  border-radius: 6px;
+  padding: 2rem;
+  background: var(--white);
+  color: var(--charcoal);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.contact-modal::backdrop {
+  background: rgba(30, 34, 38, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 { margin-bottom: 0; font-size: 1.75rem; }
+
+.modal-close {
+  background: none;
+  border: 0;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--slate);
+  cursor: pointer;
+}
+
+.modal-close:hover { color: var(--copper); }
+
+.modal-contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: var(--cream);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
 
 /* HERO */
 
