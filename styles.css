@@ -76,7 +76,7 @@ nav {
   text-decoration: none;
   font-size: 20px;
   color: rgb(165, 101, 42);
-  font-weight: 600;
+  font-weight: 400;
   padding: 8px;
   transition: all 0.3s ease;
   position: relative;
@@ -110,3 +110,6 @@ nav {
   color: #000000;
   transform: translateY(-2px);
 }
+
+/* HERO */
+
