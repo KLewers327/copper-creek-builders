@@ -194,6 +194,7 @@ if (galleryGrid) {
         lightboxImageCount.hidden = !hasMultipleImages;
         updateLightboxImage();
         lightboxModal.showModal();
+        document.body.classList.add("modal-open");
       });
     });
   };
@@ -220,6 +221,9 @@ if (galleryGrid) {
     closeLightboxButton.addEventListener("click", () => lightboxModal.close());
     lightboxModal.addEventListener("click", event => {
       if (event.target === lightboxModal) lightboxModal.close();
+    });
+    lightboxModal.addEventListener("close", () => {
+      document.body.classList.remove("modal-open");
     });
   }
 
