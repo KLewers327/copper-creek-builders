@@ -788,6 +788,11 @@ nav {
     width: 150px;
   }
 
+  .nav__logo--gallery,
+  .nav__logo--services {
+  width: 100px;
+}
+
   .nav__links {
     display: none;
     flex-direction: column;
