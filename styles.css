@@ -30,6 +30,10 @@ body {
   line-height: 1.6;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 ul {
   display: flex;
 }
@@ -770,7 +774,7 @@ nav {
     display: flex;
   }
 
-    .about__grid {
+  .about__grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
@@ -778,6 +782,10 @@ nav {
   .footer-grid {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav__logo {
+    width: 150px;
   }
 
   .nav__links {
@@ -798,5 +806,16 @@ nav {
   }
   .nav__link {
     margin: 0.4rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  p {
+    line-height: 1.25;
+    font-size: 11px;
+  }
+
+  br {
+    display: none;
   }
 }

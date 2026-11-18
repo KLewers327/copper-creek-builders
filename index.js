@@ -10,6 +10,7 @@ if (contactModal) {
       event.preventDefault();
       if (navLinks) navLinks.classList.remove("open");
       contactModal.showModal();
+      document.body.classList.add("modal-open");
     });
   });
 
@@ -17,6 +18,10 @@ if (contactModal) {
 
   contactModal.addEventListener("click", event => {
     if (event.target === contactModal) contactModal.close();
+  });
+
+  contactModal.addEventListener("close", () => {
+    document.body.classList.remove("modal-open");
   });
 
   contactForm.addEventListener("submit", event => {
