@@ -87,11 +87,11 @@ if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 // Gallery Filtering & Lightbox (Runs on gallery.html)
 const galleryProjects = [
   {
-    title: "Creekside Timber Estate",
+    title: "Adobe Style Estate",
     category: "custom",
     badge: "Custom Build",
-    summary: "4,200 sq ft • Ground-Up Residence",
-    details: "Custom single-story ranch featuring natural stone accents, exposed timber trusses, and an open-concept great room.",
+    summary: "3,600 sq ft • Ground-Up Residence",
+    details: "Custom single-story adobe sylte home featuring natural stone accents and an open-concept great room.",
     image: "./assets/pendley-house-front.webp"
   },
   {
@@ -103,12 +103,12 @@ const galleryProjects = [
     image: "https://unsplash.com"
   },
   {
-    title: "Cedar Pavilion & Patio",
-    category: "outdoor",
-    badge: "Outdoor Living",
-    summary: "Custom Timber Structure & Stonework",
-    details: "Heavy-timber covered outdoor living space complete with tongue-and-groove ceiling, stone fireplace, and built-in grill station.",
-    image: "https://unsplash.com"
+    title: "Modern Ranch Style Estate",
+    category: "custom",
+    badge: "Custom Build",
+    summary: "2,500 sq ft • Ground-Up Residence",
+    details: "Modern ranch style home with open concept, 3 bedrooms, luxury master bathroom, and full back porch with custom fireplace",
+    image: "./assets/pendley-house-2-front.jpg"
   },
   {
     title: "Ridgeview Stone Residence",
