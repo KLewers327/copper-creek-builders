@@ -815,12 +815,7 @@ nav {
 }
 
 @media (max-width: 640px) {
-  p {
-    line-height: 1.25;
-    font-size: 11px;
-  }
-
-  br {
+  .hero-content br {
     display: none;
   }
 }
