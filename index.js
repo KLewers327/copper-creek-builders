@@ -119,9 +119,9 @@ const galleryProjects = [
       "./assets/pendley-house-2-in-progress-back.jpg",
       "./assets/pendley-house-2-foyer.jpg",
       "./assets/pendley-house-2-kitchen.jpg",
+      "./assets/pendley-house-2-attached-garage-interior.jpg",
       "./assets/pendley-garage.jpg",
       "./assets/pendley-detached-garage.jpg",
-      "./assets/pendley-house-2-attached-garage-interior.jpg"
     ]
   },
   {
