@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Gallery | Copper Creek Builders</title>
+    <link rel="icon" href="./assets/copper-creek-initials-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="nav">
+      <div class="nav__container">
+        <a href="index.html">
+          <img
+            src="./assets/copper-creek-initials-logo.png"
+            alt="Copper Creek Builders"
+            class="nav__logo"
+          />
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="nav__toggle"
+          aria-label="Toggle Navigation"
+        >
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+
+        <ul id="nav-links" class="nav__links">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="services.html" class="nav__link">Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="gallery.html" class="nav__link nav__link--active">Gallery</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link open-contact-modal">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CONTACT MODAL -->
+    <dialog class="contact-modal" id="contactModal">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Request a Consultation</h2>
+        </div>
+        <button type="button" class="modal-close" id="closeModal" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="modal-contact-bar">
+        <span><strong>Phone:</strong> (555) 234-5678</span>
+        <span><strong>Email:</strong> info@coppercreek-builders.example</span>
+      </div>
+
+      <form class="modal-form" id="contactForm">
+        <div class="form-group">
+          <label for="clientName">Full Name</label>
+          <input type="text" id="clientName" required placeholder="Jane Doe" />
+        </div>
+        <div class="form-group">
+          <label for="clientEmail">Email Address</label>
+          <input type="email" id="clientEmail" required placeholder="jane@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="projectType">Project Type</label>
+          <select id="projectType">
+            <option value="custom">Custom Home Build</option>
+            <option value="remodel">Whole-Home Remodel</option>
+            <option value="outdoor">Outdoor Living / Addition</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="projectDetails">Project Details</label>
+          <textarea id="projectDetails" rows="3" required placeholder="Share lot status, estimated square footage, or goals..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%">Send Inquiry</button>
+        <p class="form-feedback" id="formFeedback"></p>
+      </form>
+    </dialog>
+
+    <!-- LIGHTBOX MODAL FOR GALLERY PHOTOS -->
+    <dialog class="lightbox-modal" id="lightboxModal">
+      <button type="button" class="lightbox-close" id="closeLightbox" aria-label="Close Lightbox">&times;</button>
+      <img id="lightboxImage" src="" alt="" />
+      <div class="lightbox-caption">
+        <span class="eyebrow" id="lightboxCategory"></span>
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDetails"></p>
+      </div>
+    </dialog>
+
+    <!-- PAGE BANNER -->
+    <header class="page-banner">
+      <div class="container">
+        <span class="eyebrow">Portfolio</span>
+        <h1>Featured Builds &amp; Renovations</h1>
+        <p>
+          Filter by project category or click any residence to inspect the
+          craftsmanship up close.
+        </p>
+      </div>
+    </header>
+
+    <!-- FILTERABLE GALLERY -->
+    <section class="section">
+      <div class="container">
+        <div class="filter-controls" id="filterControls">
+          <button type="button" class="filter-btn active" data-category="all">All Projects</button>
+          <button type="button" class="filter-btn" data-category="custom">Custom Homes</button>
+          <button type="button" class="filter-btn" data-category="remodel">Remodels</button>
+          <button type="button" class="filter-btn" data-category="outdoor">Outdoor Living</button>
+        </div>
+
+        <div class="featured__grid" id="galleryGrid"></div>
+
+        <div class="section-cta">
+          <a href="#contact" class="btn-primary open-contact-modal">Start Your Own Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Copper Creek Builders, LLC</h4>
+          <p>Licensed, Bonded &amp; Insured General Contractors.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>info@coppercreek-builders.example</p>
+          <p>(555) 234-5678</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear"></span> Copper Creek Builders, LLC. All
+          rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
