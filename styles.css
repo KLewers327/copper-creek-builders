@@ -685,11 +685,52 @@ nav {
   backdrop-filter: blur(4px);
 }
 
-.lightbox-modal img {
+.lightbox-viewer {
+  position: relative;
+}
+
+.lightbox-viewer img {
   width: 100%;
   max-height: 65vh;
   object-fit: cover;
   display: block;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(30, 34, 38, 0.8);
+  color: var(--white);
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.lightbox-nav:hover {
+  background: var(--copper);
+}
+
+.lightbox-nav--previous {
+  left: 1rem;
+}
+
+.lightbox-nav--next {
+  right: 1rem;
+}
+
+.lightbox-image-count {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(30, 34, 38, 0.8);
+  color: var(--white);
+  font-size: 0.85rem;
 }
 
 .lightbox-close {

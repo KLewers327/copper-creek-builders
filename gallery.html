@@ -91,7 +91,12 @@
     <!-- LIGHTBOX MODAL FOR GALLERY PHOTOS -->
     <dialog class="lightbox-modal" id="lightboxModal">
       <button type="button" class="lightbox-close" id="closeLightbox" aria-label="Close Lightbox">&times;</button>
-      <img id="lightboxImage" src="" alt="" />
+      <div class="lightbox-viewer">
+        <img id="lightboxImage" src="" alt="" />
+        <button type="button" class="lightbox-nav lightbox-nav--previous" id="lightboxPrevious" aria-label="Previous image">&#10094;</button>
+        <button type="button" class="lightbox-nav lightbox-nav--next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+        <span class="lightbox-image-count" id="lightboxImageCount" aria-live="polite"></span>
+      </div>
       <div class="lightbox-caption">
         <span class="eyebrow" id="lightboxCategory"></span>
         <h3 id="lightboxTitle"></h3>
