@@ -83,3 +83,98 @@ if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
 }
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+// Gallery Filtering & Lightbox (Runs on gallery.html)
+const galleryProjects = [
+  {
+    title: "Creekside Timber Estate",
+    category: "custom",
+    badge: "Custom Build",
+    summary: "4,200 sq ft • Ground-Up Residence",
+    details: "Custom single-story ranch featuring natural stone accents, exposed timber trusses, and an open-concept great room.",
+    image: "./assets/pendley-house-front.webp"
+  },
+  {
+    title: "Modern Farmhouse Kitchen",
+    category: "remodel",
+    badge: "Remodel",
+    summary: "Full Interior & Cabinetry Renovation",
+    details: "Complete structural wall removal to create a chef's kitchen with custom white oak cabinetry, quartz waterfall island, and brass fixtures.",
+    image: "https://unsplash.com"
+  },
+  {
+    title: "Cedar Pavilion & Patio",
+    category: "outdoor",
+    badge: "Outdoor Living",
+    summary: "Custom Timber Structure & Stonework",
+    details: "Heavy-timber covered outdoor living space complete with tongue-and-groove ceiling, stone fireplace, and built-in grill station.",
+    image: "https://unsplash.com"
+  },
+  {
+    title: "Ridgeview Stone Residence",
+    category: "custom",
+    badge: "Custom Build",
+    summary: "3,850 sq ft • Southwestern Craftsman",
+    details: "Bespoke desert-modern residence designed for indoor-outdoor living with multi-slide glass doors and stucco-and-stone masonry.",
+    image: "https://unsplash.com"
+  }
+];
+
+const galleryGrid = document.getElementById("galleryGrid");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const lightboxModal = document.getElementById("lightboxModal");
+const closeLightboxButton = document.getElementById("closeLightbox");
+
+if (galleryGrid) {
+  const renderGallery = (selectedCategory = "all") => {
+    const filteredProjects = selectedCategory === "all"
+      ? galleryProjects
+      : galleryProjects.filter(project => project.category === selectedCategory);
+
+    galleryGrid.innerHTML = filteredProjects
+      .map(
+        (project, index) => `
+        <article class="featured-card featured-card--clickable" data-index="${index}">
+          <div class="featured-card__image">
+            <img src="${project.image}" alt="${project.title}" />
+            <span class="featured-card__badge">${project.badge}</span>
+          </div>
+          <div class="featured-card__body">
+            <h3>${project.title}</h3>
+            <p>${project.summary}</p>
+          </div>
+        </article>
+      `
+      )
+      .join("");
+
+    galleryGrid.querySelectorAll(".featured-card").forEach((card, index) => {
+      card.addEventListener("click", () => {
+        const selectedProject = filteredProjects[index];
+        document.getElementById("lightboxImage").src = selectedProject.image;
+        document.getElementById("lightboxImage").alt = selectedProject.title;
+        document.getElementById("lightboxCategory").textContent = selectedProject.badge;
+        document.getElementById("lightboxTitle").textContent = selectedProject.title;
+        document.getElementById("lightboxDetails").textContent = selectedProject.details;
+        lightboxModal.showModal();
+      });
+    });
+  };
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      document.querySelector(".filter-btn.active").classList.remove("active");
+      button.classList.add("active");
+      renderGallery(button.dataset.category);
+    });
+  });
+
+  if (closeLightboxButton && lightboxModal) {
+    closeLightboxButton.addEventListener("click", () => lightboxModal.close());
+    lightboxModal.addEventListener("click", event => {
+      if (event.target === lightboxModal) lightboxModal.close();
+    });
+  }
+
+  renderGallery();
+}

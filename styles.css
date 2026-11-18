@@ -560,8 +560,6 @@ nav {
   }
 }
 
-
-
 /* FOOTER */
 
 .site-footer {
@@ -595,6 +593,129 @@ nav {
   font-size: 0.9rem;
   opacity: 0.75;
 }
+
+/* SUBPAGE BANNER & SERVICES LIST */
+
+.page-banner {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 4rem 0;
+  border-bottom: 4px solid var(--copper);
+}
+
+.page-banner h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.75rem;
+}
+
+.page-banner p {
+  color: var(--cream-light);
+  max-width: 620px;
+  font-size: 1.1rem;
+}
+
+.service-list {
+  display: block;
+  margin: 1rem 0 1.25rem;
+  padding-left: 1.15rem;
+}
+
+.service-list li {
+  list-style-type: disc;
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
+}
+
+.service-list li::marker {
+  color: var(--copper);
+}
+
+/* GALLERY FILTERS & LIGHTBOX */
+
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.35rem;
+  border: 2px solid var(--copper);
+  background: transparent;
+  color: var(--charcoal);
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--copper);
+  color: var(--white);
+}
+
+.featured-card--clickable {
+  cursor: pointer;
+}
+
+.lightbox-modal {
+  margin: auto;
+  width: min(820px, 94%);
+  border: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--charcoal);
+  color: var(--white);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-modal::backdrop {
+  background: rgba(18, 20, 23, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-modal img {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: cover;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  background: rgba(30, 34, 38, 0.8);
+  color: var(--white);
+  border: 0;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: var(--copper);
+}
+
+.lightbox-caption {
+  padding: 1.5rem 2rem;
+  border-top: 4px solid var(--copper);
+}
+
+.lightbox-caption p {
+  color: var(--cream-light);
+  margin-top: 0.35rem;
+}
+
 
 /* RESPONSIVENESS */
 
