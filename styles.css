@@ -633,6 +633,11 @@ nav {
 
 /* GALLERY FILTERS & LIGHTBOX */
 
+.nav__logo--gallery,
+.nav__logo--services {
+  width: 180px;
+}
+
 .filter-controls {
   display: flex;
   justify-content: center;
