@@ -10,6 +10,7 @@ if (contactModal) {
       event.preventDefault();
       if (navLinks) navLinks.classList.remove("open");
       contactModal.showModal();
+      document.documentElement.classList.add("modal-open");
       document.body.classList.add("modal-open");
     });
   });
@@ -21,6 +22,7 @@ if (contactModal) {
   });
 
   contactModal.addEventListener("close", () => {
+    document.documentElement.classList.remove("modal-open");
     document.body.classList.remove("modal-open");
   });
 
@@ -194,6 +196,7 @@ if (galleryGrid) {
         lightboxImageCount.hidden = !hasMultipleImages;
         updateLightboxImage();
         lightboxModal.showModal();
+        document.documentElement.classList.add("modal-open");
         document.body.classList.add("modal-open");
       });
     });
@@ -223,6 +226,7 @@ if (galleryGrid) {
       if (event.target === lightboxModal) lightboxModal.close();
     });
     lightboxModal.addEventListener("close", () => {
+      document.documentElement.classList.remove("modal-open");
       document.body.classList.remove("modal-open");
     });
   }
