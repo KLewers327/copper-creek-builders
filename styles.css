@@ -20,10 +20,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  max-width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   color: var(--charcoal);
   background: var(--white);
@@ -438,7 +439,7 @@ nav {
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
 }
 
@@ -475,7 +476,7 @@ nav {
 
 .featured__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
 }
 
@@ -546,6 +547,13 @@ nav {
 .reveal-right {
   opacity: 0;
   will-change: transform, opacity;
+}
+
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
 }
 
 .reveal-left {
